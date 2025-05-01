@@ -8,8 +8,8 @@ import authMiddleware from '../middleware/authMiddleware.js';
 const prisma = new PrismaClient();
 const router = express.Router();
 
-router.get('/', authMiddleware, getAllProducts);
-router.get('/:id', authMiddleware, getProductById);
+router.get('/', getAllProducts);
+router.get('/:id', getProductById);
 router.post('/create',validateProduct, authMiddleware, isAdmin, createProduct);
 router.put('/update/:id', authMiddleware, isAdmin, updateProduct);
 router.delete('/delete/:id', authMiddleware, isAdmin, deleteProduct);
