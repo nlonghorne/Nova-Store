@@ -139,3 +139,28 @@ h1, h2 {
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+.mode-toggle {
+  margin: 1rem 0;
+}
+
+.mode-toggle button {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #007bff;
+  background-color: white;
+  color: #007bff;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.mode-toggle button:hover {
+  background-color: #e6f0ff;
+}
+
+.mode-toggle .active {
+  background-color: #007bff;
+  color: white;
+}

@@ -4,6 +4,7 @@ import Register from './pages/Register.jsx';
 import Home from './pages/Home.jsx';
 import ProductHome from './pages/ProductHome.jsx';
 import ProductDetail from './pages/ProductDetail';
+import AdminProductManager from './pages/AdminProductManager.jsx';
 import { useAuth } from './context/AuthContext';
 import './App.css';
 
@@ -17,7 +18,7 @@ function App() {
       <Link to="/products">Products</Link>
       {user ? (
         <>
-          {/* <span>Welcome, {user.name}!</span> */}
+          {user?.isAdmin && <Link to="/admin/products">Admin</Link>}
           <button onClick={logout}>Logout</button>
         </>
       ) : (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/products" element={<ProductHome />} />
         <Route path="/product/:productId" element={<ProductDetail />} />
+        <Route path="/admin/products" element={<AdminProductManager />} />
       </Routes>
     </>
   );
